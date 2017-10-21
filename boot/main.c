@@ -76,6 +76,7 @@ readseg(uint32_t pa, uint32_t count, uint32_t offset)
 	end_pa = pa + count;
 
 	// round down to sector boundary
+	//重定向pa到offset存数单元所在扇区的起始位置？？？这样end_pa不久不对了吗？
 	pa &= ~(SECTSIZE - 1);
 
 	// translate from bytes to sectors, and kernel starts at sector 1
